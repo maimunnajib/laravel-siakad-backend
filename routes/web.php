@@ -13,10 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('pages.blank-page', ['type_menu' => '']);
+ Route::get('/', function () {
+     return redirect('login');
+ });
+
+Route::middleware(['auth'])->group(function (){
+     Route::get('home',function (){
+        return view('pages.app.dashboard-siakad', ['type_menu' => '']);
+     });
 });
-Route::get('/dashboard-general-dashboard', function () {
-    return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
-});
+
+// Route::get('/login', function () {
+//     return view('pages.auth.auth-login');
+// })->name('login');
+
+// Route::get('/register', function () {
+//     return view('pages.auth.auth-register');
+// })->name('register');
+
+// Route::get('/forgot', function () {
+//     return view('pages.auth.auth-forgot-password');
+// })->name('forgot');
+
+// Route::get('/reset-password', function () {
+//     return view('pages.auth.auth-reset-password');
+// })->name('reset-password');
+
