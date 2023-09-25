@@ -1,3 +1,3 @@
   <div class="simple-footer">
-      Copyright &copy; Stisla 2018
+      Copyright &copy; Jago Flutter 2023
   </div>
